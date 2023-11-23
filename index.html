@@ -13,15 +13,41 @@
             <button><img src="search.png" alt="search icon"></button>
         </div>
         <div class="weather">
-            <img src="rainy.jpg" alt="Raining" class="weather-icon">
+            <img src="rainy.png"Raining" class="weather-icon">
             <h1 class="temp">27°C</h1>
             <h2 class="city">Nepal</h2>
             <div class="details">
                 <div class="col">
-                    
+                    <img src="humidity.png" alt="humidity">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="wind.png" alt="windy">
+                    <div>
+                        <p class="windy">5kmph</p>
+                        <p>Wind speed</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+<script>
+    const apikey="82b94aef66a4db90c0886d5813145aba";
+    const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=kathmandu";
+
+    async function checkWeather(){
+        const response=await fetch(apiUrl + `&appid=${apikey}`);
+        var data=await response.json();
+        console.log(data);
+                
+
+    }
+    checkWeather();
+</script>
+
 </body>
 </html>
